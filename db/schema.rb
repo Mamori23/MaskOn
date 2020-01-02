@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_02_193752) do
+ActiveRecord::Schema.define(version: 2020_01_02_212939) do
 
   create_table "users", force: :cascade do |t|
     t.string "first_name"
@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2020_01_02_193752) do
     t.string "birthday"
     t.string "email"
     t.string "password"
+    t.boolean "active"
   end
 
 end

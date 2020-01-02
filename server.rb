@@ -16,6 +16,14 @@ end
 
 get '/login' do
     erb :login
+    end
+
+post '/login' do
+    user = User.find_by(email: params[:email])
+    given_password = params[:password]
+    if user.password == given_password
+        session[:user_id] = user.id
+        session
 end
 
 get '/logout' do
