@@ -1,11 +1,13 @@
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'sqlite3'
 require 'rake'
+require 'pg'
 require './models'
 
-set :database, {adapter: 'sqlite3', database: 'maskon.sqlite3'}
+
+set :database, {adapter: 'postgresql', database: 'maskon'}
 enable :sessions
+
 
 
 get '/' do
