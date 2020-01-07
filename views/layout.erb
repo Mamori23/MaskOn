@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js">
+    <link rel="stylesheet" href="main.css">
     <title>Mask On</title>
 </head>
 <body>
-    <div id='container'>
-        <div id='home'>
-            <a href="/">Home</a>
-        </div>
-        <div id=''>
 
+  <nav>
+        <div id='navbar'>
+            <a href='/'>Home</a>
+            <% if !session[:user_id] %>
+                <a href='/signup'>Signup</a>
+                <a href='/login'>Login</a>
+            <% end %> 
+            
+            <% if session[:user_id] %>
+            <a href="/profile"></a>
+            <a href="/logout"></a>
+             <% end %> 
         </div>
-    </div>
+    </nav>
+
+<%= yield %>
 </body>
 </html>

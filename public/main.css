@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+}
+
+@font-face {
+	font-family: Phantom;
+	src: url(/fonts/PhanFont.ttf);
+}
+
+
+ #navbar a {
+    text-decoration: none;
+    color: black;
+} 
+
+#navbar {
+    display: grid;
+    grid-template-columns: ;
+    text-align: center;
+    font-size: 2em;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 2%;
+}
+
+
+h1 {
+ font: red;
+ font-family: Phantom;
+}
+
