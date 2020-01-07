@@ -23,7 +23,6 @@ post '/login' do
     given_password = params[:password]
     if user.password == given_password
         session[:user_id] = user.id
-        session[:user_email] = user.email
         session[:user_name] = [user.first_name].join(' ')
         puts 'Welcome to the Velvet Room'
         redirect './profile'
@@ -59,7 +58,25 @@ get '/logout' do
 end
 
 get '/post' do
-    @posts = Post.all
-    puts @posts
+    # post = Post.new(content: params[:content], email: @user.email, user_id: session[user_id] )
+    # if @post.vaild?
+    #     @post.save  
+    #    redirect '/dashboard'
+    # @posts = Post.all
+    # puts @posts
     erb :post
+end
+end
+
+
+get '/dashboard' do
+    erb :dashboard
+end 
+
+post '/dashboard' do
+    post = Post.new(content: params[:content], email: @user.email, user_id: session[user_id] )
+    if @post.vaild?
+        @post.save  
+       redirect '/dashboard'
+    end
 end

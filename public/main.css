@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: url(/images/phan.png);
+    background-image: url(images/phan.png);
 }
 
 /* @font-face {
@@ -24,8 +24,11 @@ body {
 }
 
 
-h1 {
- font: red;
- font-family:  'Earwig Factory';
+.top {
+ color: white; 
+ font-family: 'Earwig Factory';
+ margin: 20px auto;
+ margin-buttom: 0px;
+ text-shadow: 4px 0 black, 0 -4px black, -4px 0 black, 0 4px black;
 }
 
