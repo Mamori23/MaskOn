@@ -16,12 +16,8 @@
                 <a href='/signup'>Signup</a>
                 <a href='/login'>Login</a>
             <% end %> 
-            
-            <% if session[:user_id] %>
-            <a href="/profile"></a>
-            <a href="/logout"></a>
-             <% end %> 
         </div>
+        
     </nav>
 
 <%= yield %>

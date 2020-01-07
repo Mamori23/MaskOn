@@ -1,11 +1,12 @@
 body {
     margin: 0;
+    background-image: url(/images/phan.png);
 }
 
-@font-face {
-	font-family: Phantom;
-	src: url(/fonts/PhanFont.ttf);
-}
+/* @font-face {
+    font-family: 'Earwig Factory';
+    font-family: 'p5hatty';
+} */
 
 
  #navbar a {
@@ -18,13 +19,13 @@ body {
     grid-template-columns: ;
     text-align: center;
     font-size: 2em;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(2, auto);
     grid-gap: 2%;
 }
 
 
 h1 {
  font: red;
- font-family: Phantom;
+ font-family:  'Earwig Factory';
 }
 
