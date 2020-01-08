@@ -1,3 +1,9 @@
 <h1>Welcome Back, <%= session[:user_name] %> </h1>
 
+
 <h2> Requests </h2>
+
+<form action='/profile' method='POST'>
+    <input type="text" name="content" placeholder="Yo">
+    <input type="submit" value="Post">
+</form>

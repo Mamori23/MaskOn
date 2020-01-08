@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-image: url(images/phan.png);
+    background-color: black;
 }
 
 /* @font-face {
@@ -11,24 +11,25 @@ body {
 
  #navbar a {
     text-decoration: none;
-    color: black;
+    color: red;
 } 
 
 #navbar {
     display: grid;
-    grid-template-columns: ;
+    /* grid-template-columns: ; */
     text-align: center;
     font-size: 2em;
-    grid-template-columns: repeat(2, auto);
+    grid-template-columns: repeat(6, auto);
     grid-gap: 2%;
+    color: white;
 }
 
 
 .top {
  color: white; 
  font-family: 'Earwig Factory';
- margin: 20px auto;
- margin-buttom: 0px;
+ margin: 20px, auto;
+ margin-bottom: 0px;
  text-shadow: 4px 0 black, 0 -4px black, -4px 0 black, 0 4px black;
 }
 

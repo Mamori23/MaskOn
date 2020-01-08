@@ -51,32 +51,46 @@ get '/profile' do
     erb :profile
     end
 
+
+post '/profile' do
+   @post = Post.new(user_id: session[:user_id])
+   post = Post.find_by(params['content'])
+   if @post.valid?
+          @post.save
+    else
+        redirect '/profile'
+    end
+end
+
+
 get '/logout' do
     session[:user_id] = nil
     session[:user_name] = nil
     redirect '/'
 end
 
-get '/post' do
-    # post = Post.new(content: params[:content], email: @user.email, user_id: session[user_id] )
-    # if @post.vaild?
-    #     @post.save  
-    #    redirect '/dashboard'
-    # @posts = Post.all
-    # puts @posts
-    erb :post
+
+# get '/dashboard' do
+#     erb :dashboard
+# end 
+
+# post '/dashboard' do
+#     post = Post.new(content: params[:content], email: @user.email, user_id: session[user_id] )
+#     if @post.vaild?
+#         @post.save  
+#        redirect '/dashboard'
+#     end
+# end
+
+get '/cancel' do
+    erb :cancel
 end
+
+post '/cancel' do
+    user = User.find_by(params['user_email'])
+    user.destroy
+    erb :signup
 end
 
 
-get '/dashboard' do
-    erb :dashboard
-end 
 
-post '/dashboard' do
-    post = Post.new(content: params[:content], email: @user.email, user_id: session[user_id] )
-    if @post.vaild?
-        @post.save  
-       redirect '/dashboard'
-    end
-end
