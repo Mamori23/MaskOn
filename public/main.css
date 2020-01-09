@@ -33,3 +33,10 @@ body {
  text-shadow: 4px 0 black, 0 -4px black, -4px 0 black, 0 4px black;
 }
 
+h1 {
+    color: white;
+}
+
+h2 {
+    color: white;
+}

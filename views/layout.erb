@@ -13,16 +13,18 @@
          <div id='navbar'> 
             <a href='/'>Home</a>
 
-            <% if !session[:user_id] %>
+            <% if !session[:user_id]  %>
               <a href="/signup"> Signup</a>
               <a href="/login"> Login </a>
               <a href="/cancel"> Cancel </a>
-            <% end %> 
+            <% else %> 
   
-          <% if session[:user_id] = nil %>
+          <% if session[:user_id] == nil %>
               <a href="/profile"> Profile</a>
               <a href="/logout"> Logout</a>
           <% end %>
+          <% end %>
+          </div>
 
   
       <!-- <a href='/home'>Home</a>
