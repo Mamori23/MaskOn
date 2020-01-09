@@ -10,4 +10,11 @@
     <input type="submit" value="Submit">
 
 
+   <%  @user.posts.order(created_at: :desc).each do | post | %>
+
+   <p> <%= post.content %> </p> 
+
+   <% end %>
+
+
 </form>

@@ -24,6 +24,7 @@ post '/login' do
     if @user.password == given_password
         session[:user_id] = @user.id
         session[:user_name] = @user.first_name
+        session[:user_email] = @user.email
         pp session[:user_id]
         redirect '/profile'
     else
@@ -48,8 +49,7 @@ post '/signup' do
 end
 
 get '/profile' do
-    @posts = Post.where(user_id: session[:user_id])
-    puts @posts
+    @user = User.find_by(id: session[:user_id])
     
     # session[:user_id] = @user.id
     erb :profile
@@ -57,10 +57,10 @@ end
 
 
 get '/profile/:id' do
-        @searchedID = params[:id]
-        @user = User.find_by(id: params[:id])
-        @posts = Post.where(user_id: params[:id])
-        puts @user.id
+ @getid = params[:id]
+  @user = User.find_by(id: params[:id])
+  @posts = Post.where(user_id: params[:id])
+     puts @user.id
         erb :profile
     end
 
@@ -69,7 +69,8 @@ post '/profile' do
     @post = Post.new(params[:post])
     if @post.valid?
         @post.user_id = session[:user_id]
-           @post.save
+        @post.email = session[:user_email]
+        @post.save
         redirect '/profile'
         else
             redirect '/'
@@ -80,9 +81,8 @@ end
 get '/logout' do
     session[:user_id] = nil
     session[:user_name] = nil
-    redirect '/'
+    redirect '/signup'
 end
-
 
 
 get '/cancel' do
@@ -94,6 +94,7 @@ post '/cancel' do
     user.destroy
     erb :signup
 end
+
 
 
 
