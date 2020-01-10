@@ -33,8 +33,8 @@ h1 {
     margin: 0px auto 10px auto;
 }
 
-.sign-box input[type='button'],
-.login-box input[type='button'] {
+.sign-box input[type='submit'],
+.login-box input[type='submut'] {
     border-radius: 9px;
     border: 22px;
     padding: 1px 77px;
