@@ -1,19 +1,21 @@
-<link rel="stylesheet" href="main.css">
+<link rel="stylesheet" href="profile.css">
 
 <h1>Welcome Back, <%= session[:user_name] %> </h1>
 
 
 <h2> Requests </h2>
 
-<form action='/profile' method='POST'>
+<div id='create-post'>
+ <form action='/profile' method='POST'>
     <textarea cols="50" rows="5" placeholder="Requests" name="post[content]"></textarea>
     <input type="submit" value="Submit">
+</div>
 
-
+   <div id='user-post'>
    <%  @user.posts.order(created_at: :desc).each do | post | %>
 
    <p> <%= post.content %> </p> 
-
+    </div>
    <% end %>
 
 

@@ -1,0 +1,12 @@
+<link rel="stylesheet" href="feed.css">
+
+
+<h1> User requests </h1>
+
+<div id='users-post'> 
+<% @posts.each do |post| %>
+
+<%= post.content %>
+</div>
+
+<% end %>

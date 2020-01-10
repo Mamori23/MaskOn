@@ -10,21 +10,21 @@
 <body>
 
      
-         <div id='navbar'> 
-            <a href='/'>Home</a>
-
+         <div id='header-top'> 
+            <a href='/' class='link-line'>Home</a>
+            <a href="/feed" class='link-line' > Feed </a>
             <% if !session[:user_id]  %>
-              <a href="/signup"> Signup</a>
-              <a href="/login"> Login </a>
-              <a href="/cancel"> Cancel </a>
+              <a href="/signup" class='link-line' > Signup</a>
+              <a href="/login" class='link-line' > Login </a>
+              <a href="/cancel" class='link-line' > Cancel </a>
             <% else %> 
   
           <% if session[:user_id] %>
-              <a href="/profile"> Profile</a>
-              <a href="/logout"> Logout </a>
+              <a href="/profile" class='link-line' > Profile</a>
+              <a href="/logout" class='link-line'> Logout </a>
           <% end %>
           <% end %>
-          </div>
+     </div>
  
 <%= yield %>
 </body>

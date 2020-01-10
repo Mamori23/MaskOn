@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    background-color: white;
+    background-color: black;
 }
 
 /* @font-face {
@@ -9,34 +9,88 @@ body {
 } */
 
 
- #navbar a {
-    text-decoration: none;
-    color: red;
-} 
-
-#navbar {
-    display: grid;
-    /* grid-template-columns: ; */
+#header-top {
+    position: fixed;
+    margin: 0;
+    top: 0px;
+	left: 0px;
+    height: 35px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #d61616;
+    box-shadow: 0 4px 10px -2px black;
+    z-index: 10001;
+	padding: 4px 15px 5px 15px;
+    border-top: 2px solid black;
+    /* display: grid;
     text-align: center;
     font-size: 2em;
     grid-template-columns: repeat(6, auto);
     grid-gap: 2%;
     color: white;
+ */
+}
+
+#header-top .right {
+	float: right;
 }
 
 
-.top {
- color: white; 
- font-family: 'Earwig Factory';
- margin: 20px, auto;
- margin-bottom: 0px;
- text-shadow: 4px 0 black, 0 -4px black, -4px 0 black, 0 4px black;
+ #header-top a {
+    text-decoration: none;
+    color: white;
+} 
+
+
+
+#logo {
+    display: grid;
+    position: relative;
+    justify-content: center;
+    padding: 5%;
 }
+
+
 
 h1 {
     color: white;
+    font-size: 3em;
 }
 
-h2 {
-    color: white;
+
+p {
+ color: white;
+ font-family: 'p5hatty';
+ text-align: center;
+ font-size: 24px;
 }
+
+.top {
+    color: white; 
+    font-family: 'Earwig Factory';
+    margin-bottom: 0px;
+    margin: 104px;
+    text-shadow: 4px 0 black, 0 -4px black, -4px 0 black, 0 4px black;
+    text-align: center;
+ }
+
+
+.link-line {
+    display: inline-block;
+  }
+  
+  .link-line::after {
+     content: '';
+     display: block;
+     width: 0;
+     height: 5px;
+     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 74 6' preserveAspectRatio='none' fill='%23F4B3A9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M63.761.3c-7.024-.223-14.116-.57-21.12.05C28.905 1.563 15.279 2.266 1.467 2.736-.135 2.79-.65 4.817 1.072 5.05c10.592 1.44 22.877.988 33.556.311C47.011 4.58 59.23 4.072 71.64 5.226c2.04.188 3.168-2.193 1.678-3.206C70.5.105 67.445.417 63.761.3z'/%3E%3C/svg%3E");
+     fill: black;
+     transition: width .3s;
+  }
+  
+  .link-line:hover::after {
+    width: 100%
+  }
+
+ 

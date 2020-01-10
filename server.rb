@@ -33,9 +33,12 @@ post '/login' do
     end
 end
 
+
 get '/signup' do
     erb :signup
 end
+
+
 
 post '/signup' do
     @user = User.new(params[:user])
@@ -62,7 +65,7 @@ get '/profile/:id' do
   @posts = Post.where(user_id: params[:id])
      puts @user.id
         erb :profile
-    end
+end
 
 
 post '/profile' do
@@ -76,6 +79,13 @@ post '/profile' do
             redirect '/'
     end
 end
+
+get '/feed' do
+@posts = Post.all
+   puts @posts
+    erb :feed
+end
+
 
 
 get '/logout' do
@@ -95,6 +105,10 @@ post '/cancel' do
     erb :signup
 end
 
+get '/search' do
+    erb :search
+end 
 
 
-
+# @posts = Post.all
+#     puts @posts
