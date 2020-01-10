@@ -5,8 +5,19 @@ require 'pg'
 require './models'
 
 
-set :database, {adapter: 'postgresql', database: 'maskon'}
-enable :sessions
+
+# set :database, {adapter: 'postgresql', database: 'maskon'}
+# enable :sessions
+
+
+configure :development do 
+    set :database, {adapter: 'postgresql', database: 'maskon'}
+end 
+
+
+configure :production do 
+    set :database{url: ENV['DATABASE_URL']}
+end
 
 
 
@@ -79,6 +90,7 @@ post '/profile' do
             redirect '/'
     end
 end
+
 
 get '/feed' do
 @posts = Post.all
