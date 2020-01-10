@@ -7,7 +7,7 @@ require './models'
 
 
 # set :database, {adapter: 'postgresql', database: 'maskon'}
-# enable :sessions
+enable :sessions
 
 
 configure :development do 
