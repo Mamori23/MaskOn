@@ -79,17 +79,17 @@ p {
     display: inline-block;
   }
   
-  .link-line::after {
+.link-line::after {
      content: '';
      display: block;
      width: 0;
      height: 5px;
-     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 74 6' preserveAspectRatio='none' fill='%23F4B3A9' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M63.761.3c-7.024-.223-14.116-.57-21.12.05C28.905 1.563 15.279 2.266 1.467 2.736-.135 2.79-.65 4.817 1.072 5.05c10.592 1.44 22.877.988 33.556.311C47.011 4.58 59.23 4.072 71.64 5.226c2.04.188 3.168-2.193 1.678-3.206C70.5.105 67.445.417 63.761.3z'/%3E%3C/svg%3E");
+     background-image: url("data:image/line.svg");
      fill: black;
      transition: width .3s;
   }
   
-  .link-line:hover::after {
+.link-line:hover::after {
     width: 100%
   }
 

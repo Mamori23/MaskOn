@@ -111,7 +111,7 @@ get '/cancel' do
     erb :cancel
 end
 
-post '/cancel' do
+post '/cancel' do 
     user = User.find_by(params['user_email'])
     user.destroy
     erb :signup
