@@ -16,7 +16,7 @@ end
 
 
 configure :production do 
-    set :database{url: ENV['DATABASE_URL']}
+    set :database, {url: ENV['DATABASE_URL']}
 end
 
 
